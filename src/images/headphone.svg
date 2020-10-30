@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="408.645" height="332.546" viewBox="0 0 408.645 332.546">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.231" y1="0.116" x2="0.802" y2="0.884" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffc499"/>
+      <stop offset="1" stop-color="#ff98cf"/>
+    </linearGradient>
+    <filter id="Path_15" x="163.814" y="120.941" width="71.864" height="102.449" filterUnits="userSpaceOnUse">
+      <feOffset dy="13" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_16" x="173.814" y="126.941" width="71.864" height="102.449" filterUnits="userSpaceOnUse">
+      <feOffset dy="13" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_17" x="165.904" y="149.277" width="78.977" height="68.32" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_18" x="168.179" y="190.554" width="71.891" height="47.393" filterUnits="userSpaceOnUse">
+      <feOffset dy="9" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5.5" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffcf99"/>
+      <stop offset="1" stop-color="#ff9fc7"/>
+    </linearGradient>
+    <filter id="headphone" x="0" y="0" width="408.645" height="332.546" filterUnits="userSpaceOnUse">
+      <feOffset dy="18" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="23" result="blur-5"/>
+      <feFlood flood-color="#ffbaac" flood-opacity="0.612"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="headphone-2" data-name="headphone" transform="translate(-755.47 -415.139)">
+    <g id="mic">
+      <circle id="Ellipse_4" data-name="Ellipse 4" cx="91" cy="91" r="91" transform="translate(871 495)" fill="url(#linear-gradient)"/>
+      <g id="Group_27" data-name="Group 27">
+        <g transform="matrix(1, 0, 0, 1, 755.47, 415.14)" filter="url(#Path_15)">
+          <path id="Path_15-2" data-name="Path 15" d="M-849.978,323.161c-1.432-.239-4.544-.1-8.8,2.524s-6.455,4.886-7.785,8.062-1.024,12.6-1.024,12.6-.29,16.988,0,21.835,5.377,9.345,5.377,9.345-1.346-2.75.64-9.345,11.12-19.333,12.8-21.507,2.675-5.707,3.662-9.606,1.574-7.835,1.07-9.321-.637-2.254-2.148-3.183A8.9,8.9,0,0,0-849.978,323.161Z" transform="translate(1055.53 -191.14)" fill="#fff"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, 755.47, 415.14)" filter="url(#Path_16)">
+          <path id="Path_16-2" data-name="Path 16" d="M-861.592,377.448c1.432.239,4.544.1,8.8-2.524s6.455-4.886,7.785-8.062,1.024-12.6,1.024-12.6.29-16.988,0-21.835-5.377-9.345-5.377-9.345,1.346,2.75-.64,9.345-11.12,19.333-12.8,21.507-2.675,5.707-3.662,9.606-1.574,7.835-1.07,9.321.637,2.254,2.148,3.183A8.9,8.9,0,0,0-861.592,377.448Z" transform="translate(1065.53 -185.14)" fill="#fff"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, 755.47, 415.14)" filter="url(#Path_17)">
+          <path id="Path_17-2" data-name="Path 17" d="M-871.888,346.416s-2.015,13.814,0,22.65,4.3,10.318,7.622,12.882,8.659,5.4,13.748,5.638,9.6-1.114,15.215-6.53a27.8,27.8,0,0,0,7.238-11.99v-22.65s2.7.137,4.051,1.515,1.365,4,1.365,4a8.528,8.528,0,0,1-.572,3.069,6.006,6.006,0,0,1-1.791,2.15s.464,8.9,0,11.916-2.763,8.954-8.232,14.243-13.9,7.486-17.274,7.426-8.567-.1-16.366-6.462-7.676-13.2-8.253-15.207,0-11.916,0-11.916a8.891,8.891,0,0,1-2.033-2.488,5.492,5.492,0,0,1-.428-2.731,7.842,7.842,0,0,1,1.769-4A7.049,7.049,0,0,1-871.888,346.416Z" transform="translate(1055.53 -191.14)" fill="#fff"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, 755.47, 415.14)" filter="url(#Path_18)">
+          <path id="Path_18-2" data-name="Path 18" d="M-852.117,390.834s.618,6.211.35,7.051a4.249,4.249,0,0,1-2.855,2.8c-1.779.5-14.608-.532-14.975,0s-.457,3.177.583,3.554,36.442.348,37.468.35.5-3.843,0-3.9-12.166.416-13.694,0-2.071-1.38-2.506-2.8,0-7.692,0-7.692Z" transform="translate(1054.53 -192.14)" fill="#fff"/>
+        </g>
+        <rect id="Rectangle_12" data-name="Rectangle 12" width="12" height="2" rx="1" transform="translate(942 561)" fill="#fcb4a7"/>
+        <rect id="Rectangle_13" data-name="Rectangle 13" width="12" height="2" rx="1" transform="translate(942 565)" fill="#fcb4a7"/>
+        <rect id="Rectangle_14" data-name="Rectangle 14" width="12" height="2" rx="1" transform="translate(942 569)" fill="#fcb4a7"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 755.47, 415.14)" filter="url(#headphone)">
+      <path id="headphone-3" data-name="headphone" d="M1466.775,441.307s-11.681-23.106-15.575-43.2a99.867,99.867,0,0,1,0-37.172l17.779-18.881s1.738-30.275,40.71-62.079,73.929-27.509,73.929-27.509,40.069-5.393,78.844,27.509,39.417,62.079,39.417,62.079l16.926,18.958s3.211,20.446-.421,40.538-14.526,39.756-14.526,39.756l-33.249,5.378s13.672-18.774,20.93-47.234-3.5-57.395-3.5-57.395S1685,314.4,1655.583,289s-57.678-26.3-71.965-25.669-43.405,3.559-68.046,25.669-34.452,53.056-34.452,53.056-8.548,25.923-4.029,52.08,22.106,52.549,22.106,52.549Z" transform="translate(-1380.47 -201.14)" fill="url(#linear-gradient-2)"/>
+    </g>
+  </g>
+</svg>
