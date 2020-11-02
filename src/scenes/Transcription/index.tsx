@@ -40,6 +40,7 @@ const StyledLine = styled.img`
 
 const dynamicStyle = (props: any) =>
   css`
+    white-space: pre-wrap !important;
     display: flex;
     flex-basis: 100%;
     white-space: nowrap;
@@ -49,7 +50,7 @@ const dynamicStyle = (props: any) =>
     border-left: 3px solid #f1e7ab;
     background: #5a69a9 0% 0% no-repeat padding-box;
     animation: marquee 70s linear infinite;
-    animation-play-state: ${props.state ? "play" : "paused"};
+    animation-play-state: "play";
 
     @keyframes marquee {
       0% {
@@ -85,22 +86,41 @@ const StyledSection = styled.div`
 `;
 
 let animation: boolean = false;
+let showText: string =  "";
 const Transcription = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [listen, setListen] = useState(true);
   const [timer, setTimer] = useState(0);
   const [transcriptLength, setTranscriptLength] = useState(0);
+  const [preTranscript, setPreTranscript] = useState('');
+  const [status, setStatus] = useState(false);
+  
+  // const [showText, setShowText] = useState('');
 
   useEffect(() => {
     const interval = setInterval(
       () => setTimer((prev: number) => prev + 1),
-      800
+      300
     );
   }, []);
 
-  console.log(transcriptLength, transcript.length);
-
   useEffect(() => {
+
+    // var splitTextArray = transcript.split(" ");
+    // console.log(splitTextArray);
+    // showText = showText + splitTextArray.join(" ");
+    if (status){
+      console.log(preTranscript, transcript);
+      showText = showText + " ";
+      console.log(showText);
+      if (preTranscript == transcript) {
+      showText = showText + " ";
+      } else {
+        setPreTranscript(transcript);
+        showText = showText + transcript.slice(preTranscript.length, transcript.length);
+      }  
+    }
+
     if (transcript.length > 10) {
       if (transcript.length === transcriptLength) {
         // console.log(animation);
@@ -118,6 +138,7 @@ const Transcription = () => {
   }
 
   const handleStart = () => {
+    setStatus(!status);
     if (listen) {
       SpeechRecognition.startListening({ continuous: true });
     } else {
@@ -139,9 +160,9 @@ const Transcription = () => {
           )}
         </StyledSection> */}
         <StyledSection>
-          <StyledSpan state={animation}>{transcript}</StyledSpan>
+          <StyledSpan state={animation}>{showText}</StyledSpan>
         </StyledSection>
-
+ 
         <Microphone onClick={handleStart}>
           {/* <button onClick={handleStart}>Start</button>
         <button onClick={handleStop}>Stop</button>
