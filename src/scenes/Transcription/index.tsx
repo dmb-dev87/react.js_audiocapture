@@ -41,48 +41,48 @@ const StyledLine = styled.img`
 const dynamicStyle = (props: any) =>
   css`
     white-space: pre-wrap !important;
+    min-inline-size: max-content;
     display: flex;
     flex-basis: 100%;
-    white-space: nowrap;
     padding: 0px 10px;
     font-size: 16px;
     color: #ffffffd6;
-    border-left: 3px solid #f1e7ab;
-    background: #5a69a9 0% 0% no-repeat padding-box;
-    animation: marquee 70s linear infinite;
-    animation-play-state: "play";
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // animation: marquee 16s linear infinite;
+    // animation-play-state: ${props.state}:"play":"paused";
+    // animation-iteration-count: 1;
+    // @keyframes marquee {
+    //   0% {
+    //     transform: translate(100%, 0);
+    //   }
+    //   100% {
+    //     transform: translate(-100%, 0);
+    //   }
+    // }
+  `;
 
-    @keyframes marquee {
-      0% {
-        transform: translate(60%, 0);
-      }
-      50% {
-        transform: translate(-100%, 0);
-      }
-      50.001% {
-        transform: translate(100%, 0);
-      }
-      100% {
-        transform: translate(60%, 0);
-      }
-    }
-    @keyframes marquee-reset {
-      0% {
-        transform: translate(0%, 0);
-      }
-    }
+  const dynamicStyle0 = (props: any) =>
+  css`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   `;
 
 const StyledSpan: any = styled.span`
   ${dynamicStyle};
 `;
 
-const StyledSection = styled.div`
+const StyledSection = styled.span`
   width: 100%;
   overflow: hidden;
   display: inline-flex;
   position: relative;
-  top: -15%;
+  top: -15%;  
+  border-left: 3px solid #f1e7ab;
+  border-right: 3px solid #f1e7ab;
+  background: #5a69a9 0% 0% no-repeat padding-box;
 `;
 
 let animation: boolean = false;
@@ -95,12 +95,10 @@ const Transcription = () => {
   const [preTranscript, setPreTranscript] = useState('');
   const [status, setStatus] = useState(false);
   
-  // const [showText, setShowText] = useState('');
-
   useEffect(() => {
     const interval = setInterval(
       () => setTimer((prev: number) => prev + 1),
-      300
+      50
     );
   }, []);
 
@@ -121,16 +119,16 @@ const Transcription = () => {
       }  
     }
 
-    if (transcript.length > 10) {
-      if (transcript.length === transcriptLength) {
-        // console.log(animation);
-        animation = false;
-      } else {
-        setTranscriptLength(transcript.length);
-        animation = true;
-        // console.log(animation);
-      }
-    }
+    // if (transcript.length > 10) {
+    //   if (transcript.length === transcriptLength) {
+    //     // console.log(animation);
+    //     animation = false;
+    //   } else {
+    //     setTranscriptLength(transcript.length);
+    //     animation = true;
+    //     // console.log(animation);
+    //   }
+    // }
   }, [timer]);
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
