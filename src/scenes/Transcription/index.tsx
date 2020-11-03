@@ -16,7 +16,8 @@ const Wrapper = styled.div`
 const Container = styled.div`
   text-align: center;
   padding: 32px 0px;
-  width: 1200px;
+  // width: 1400px;
+  width: 90%;
   margin: 0 auto;
   height: 700px;
   position: relative;
