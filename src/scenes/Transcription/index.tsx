@@ -45,7 +45,7 @@ const dynamicStyle = (props: any) =>
     display: flex;
     flex-basis: 100%;
     padding: 0px 10px;
-    font-size: 16px;
+    font-size: 22px;
     color: #ffffffd6;
     display: flex;
     align-items: center;
@@ -54,6 +54,7 @@ const dynamicStyle = (props: any) =>
     position: absolute;
     right: 0;
     z-index: 111;
+
     // animation: marquee 16s linear infinite;
     // animation-play-state: ${props.state}:"play":"paused";
     // animation-iteration-count: 1;
@@ -89,8 +90,8 @@ const StyledSection = styled.div`
   background: #5a69a9 0% 0% no-repeat padding-box;
 
   position: relative;
-    height: 20px;
-    align-items: center;
+  height: 30px;
+  align-items: center;
 `;
 
 let animation: boolean = false;
@@ -106,7 +107,7 @@ const Transcription = () => {
   useEffect(() => {
     const interval = setInterval(
       () => setTimer((prev: number) => prev + 1),
-      50
+      100
     );
   }, []);
 
