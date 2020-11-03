@@ -16,7 +16,6 @@ const Wrapper = styled.div`
 const Container = styled.div`
   text-align: center;
   padding: 32px 0px;
-  // width: 1400px;
   width: 90%;
   margin: 0 auto;
   height: 700px;
@@ -69,7 +68,7 @@ const dynamicStyle = (props: any) =>
     // }
   `;
 
-  const dynamicStyle0 = (props: any) =>
+const dynamicStyle0 = (props: any) =>
   css`
     display: flex;
     align-items: center;
@@ -95,8 +94,30 @@ const StyledSection = styled.div`
   align-items: center;
 `;
 
+const StyledText = styled.input`
+  color:white;
+  background: #5a69a9 0% 0% no-repeat padding-box;
+  position:absolute;
+  left: 80%;
+  top: 60px;
+  width:50px;
+  font-size:20px;
+  text-align:center;
+`;
+
+const StyledLabel = styled.label`
+  color:white;
+  position:absolute;
+  left: 73%;
+  top: 63px;
+  width:60px;
+  font-size:20px;
+  text-align:center;
+`;
+
 let animation: boolean = false;
-let showText: string =  "";
+let showText: string = "";
+let interval: any = null
 const Transcription = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [listen, setListen] = useState(true);
@@ -104,41 +125,26 @@ const Transcription = () => {
   const [transcriptLength, setTranscriptLength] = useState(0);
   const [preTranscript, setPreTranscript] = useState('');
   const [status, setStatus] = useState(false);
-  
+  const [duration, setDuration] = useState(5);
+
   useEffect(() => {
-    const interval = setInterval(
+    interval = setInterval(
       () => setTimer((prev: number) => prev + 1),
-      100
+      duration * 10
     );
   }, []);
 
   useEffect(() => {
 
-    // var splitTextArray = transcript.split(" ");
-    // console.log(splitTextArray);
-    // showText = showText + splitTextArray.join(" ");
-    if (status){
-      console.log(preTranscript, transcript);
-      showText = showText + " ";
-      console.log(showText);
+    if (status) {
       if (preTranscript == transcript) {
-      showText = showText + " ";
+        showText = showText + " ";
       } else {
         setPreTranscript(transcript);
         showText = showText + transcript.slice(preTranscript.length, transcript.length);
-      }  
+      }
     }
 
-    // if (transcript.length > 10) {
-    //   if (transcript.length === transcriptLength) {
-    //     // console.log(animation);
-    //     animation = false;
-    //   } else {
-    //     setTranscriptLength(transcript.length);
-    //     animation = true;
-    //     // console.log(animation);
-    //   }
-    // }
   }, [timer]);
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -155,26 +161,29 @@ const Transcription = () => {
     setListen(!listen);
   };
 
+  const inputChange = (event: any) => {
+    setDuration(event.target.value);
+    clearInterval(interval);
+    interval = setInterval(
+      () => setTimer((prev: number) => prev + 1),
+      duration * 10
+    );
+    console.log(duration);
+  }
+
   return (
     <Wrapper>
       <Container>
         <StyledLine src={linebreaker} alt="Line" />
+        
+        <StyledLabel>Duration(s):</StyledLabel>
+        <StyledText type="number" value={duration} onChange={inputChange}></StyledText>
 
-        {/* <StyledSection>
-          {transcript.length < 60 ? (
-            <StyledSpan state="paused">{transcript}</StyledSpan>
-          ) : (
-            <StyledSpan state="play">{transcript}</StyledSpan>
-          )}
-        </StyledSection> */}
         <StyledSection>
           <StyledSpan state={animation}>{showText}</StyledSpan>
         </StyledSection>
- 
+
         <Microphone onClick={handleStart}>
-          {/* <button onClick={handleStart}>Start</button>
-        <button onClick={handleStop}>Stop</button>
-        <button onClick={resetTranscript}>Reset</button> */}
           <StyledImg src={microphone} alt="microphone" />
         </Microphone>
       </Container>
