@@ -50,6 +50,10 @@ const dynamicStyle = (props: any) =>
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    position: absolute;
+    right: 0;
+    z-index: 111;
     // animation: marquee 16s linear infinite;
     // animation-play-state: ${props.state}:"play":"paused";
     // animation-iteration-count: 1;
@@ -74,7 +78,7 @@ const StyledSpan: any = styled.span`
   ${dynamicStyle};
 `;
 
-const StyledSection = styled.span`
+const StyledSection = styled.div`
   width: 100%;
   overflow: hidden;
   display: inline-flex;
@@ -83,6 +87,10 @@ const StyledSection = styled.span`
   border-left: 3px solid #f1e7ab;
   border-right: 3px solid #f1e7ab;
   background: #5a69a9 0% 0% no-repeat padding-box;
+
+  position: relative;
+    height: 20px;
+    align-items: center;
 `;
 
 let animation: boolean = false;
